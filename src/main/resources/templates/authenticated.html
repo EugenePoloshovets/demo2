@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body>
+
+<ul>
+    <li><a href="/">Main page</a></li>
+    <li sec:authorize="isAuthenticated"><a href="/authenticated">Authenticated users</a></li>
+    <li sec:authorize="hasRole('CLIENT')"><a href="/client">Client</a></li>
+    <li sec:authorize="hasRole('ADMIN')"><a href="/admin">Admin</a></li>
+    <li sec:authorize="isAnonymous"><a href="/login">Login</a></li>
+    <li sec:authorize="isAuthenticated"><a href="/logout">Logout</a></li>
+</ul>
+
+<h1>Access to Authenticated users</h1>
+
+</body>
+</html>
+
+
